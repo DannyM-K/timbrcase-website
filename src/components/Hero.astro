@@ -1,0 +1,59 @@
+---
+---
+<section class="relative h-screen min-h-[680px] w-full overflow-hidden">
+  <!-- Full-bleed hero image -->
+  <img
+    src="/images/Mainpic.jpg"
+    alt="Timbrcase — handcrafted multiplex birch ITX PC case"
+    class="absolute inset-0 w-full h-full object-cover scale-105 motion-safe:animate-[heroDrift_22s_ease-in-out_infinite]"
+    fetchpriority="high"
+  />
+
+  <!-- Cinematic darkening + warm vignette -->
+  <div class="absolute inset-0 bg-gradient-to-t from-brand-walnut-dark via-brand-walnut-dark/60 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-walnut-dark/85 via-transparent to-transparent"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(circle at 70% 35%, rgba(238,189,104,0.18), transparent 55%);"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex items-end pb-20 md:pb-28">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <div class="max-w-2xl">
+        <span class="inline-block text-brand-gold/90 text-xs tracking-[0.32em] uppercase mb-6 motion-safe:animate-[fadeUp_0.9s_ease-out_0.1s_both]">
+          Hand-crafted · Birch multiplex · Made in Europe
+        </span>
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.02] mb-7 motion-safe:animate-[fadeUp_1s_ease-out_0.25s_both]">
+          A computer<br/>
+          you'd actually <span class="italic text-gradient-gold">put on the shelf.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-brand-cream/75 max-w-xl mb-10 leading-relaxed motion-safe:animate-[fadeUp_1s_ease-out_0.45s_both]">
+          A solid-wood ITX case built for people who love good builds and good craftsmanship. No tempered glass. No RGB. Just birch, machined honest.
+        </p>
+        <div class="flex flex-wrap gap-4 motion-safe:animate-[fadeUp_1s_ease-out_0.6s_both]">
+          <a href="#reserve" class="px-7 py-3.5 rounded-full bg-brand-gold text-brand-walnut-dark font-semibold hover:bg-brand-gold-bright transition-colors">
+            Reserve the ITX
+          </a>
+          <a href="#formats" class="px-7 py-3.5 rounded-full border border-brand-cream/25 text-brand-cream hover:border-brand-gold/70 hover:text-brand-gold transition-colors">
+            Request ATX / Mini-ITX
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-brand-cream/50 text-[10px] tracking-[0.4em] uppercase flex flex-col items-center gap-2 z-10">
+    <span>Scroll</span>
+    <span class="w-px h-10 bg-brand-cream/40 animate-glow"></span>
+  </div>
+</section>
+
+<style>
+  @keyframes heroDrift {
+    0%, 100% { transform: scale(1.05) translate3d(0, 0, 0); }
+    50%      { transform: scale(1.08) translate3d(-1%, -1%, 0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>

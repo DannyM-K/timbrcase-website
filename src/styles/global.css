@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-brand-walnut-dark text-brand-cream font-sans;
+  }
+}
+
+@layer utilities {
+  .wood-texture {
+    background-color: #1F130B;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        rgba(60, 36, 20, 0.4) 0px,
+        rgba(40, 24, 14, 0.4) 2px,
+        rgba(60, 36, 20, 0.3) 4px,
+        rgba(30, 18, 10, 0.5) 7px
+      ),
+      radial-gradient(ellipse at 30% 40%, rgba(76, 31, 128, 0.15), transparent 60%),
+      radial-gradient(ellipse at 70% 60%, rgba(238, 189, 104, 0.08), transparent 60%);
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #EEBD68 0%, #F5CE80 50%, #EEBD68 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

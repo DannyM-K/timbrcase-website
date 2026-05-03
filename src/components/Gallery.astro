@@ -1,0 +1,37 @@
+---
+const shots = [
+  { src: '/images/case-front.jpg',    label: 'Front',     note: 'Honeycomb grille, hand-cut on a CNC. 100 % passive airflow.' },
+  { src: '/images/case-back.jpg',     label: 'Back',      note: 'Standard ITX I/O cut-out. Fits your favourite board.' },
+  { src: '/images/case-backside.jpg', label: 'Profile',   note: 'Visible plywood lamination — every layer earned its place.' },
+];
+---
+<section id="gallery" class="py-28 md:py-40 bg-brand-walnut-dark">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="max-w-2xl mb-14">
+      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">The Build</span>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
+        Six sides.<br/>
+        <span class="italic text-brand-gold">No compromises.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      {shots.map((s) => (
+        <figure class="group relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-brand-gold/10 bg-brand-walnut-dark">
+            <img
+              src={s.src}
+              alt={`Timbrcase — ${s.label}`}
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+            />
+          </div>
+          <figcaption class="mt-4">
+            <div class="text-brand-gold text-xs tracking-[0.3em] uppercase">{s.label}</div>
+            <p class="text-brand-cream/60 text-sm mt-2 leading-relaxed">{s.note}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
