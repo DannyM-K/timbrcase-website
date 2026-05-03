@@ -4,8 +4,8 @@ const formats = [
     name: 'ITX',
     status: 'available',
     headline: 'Available now',
-    blurb: 'The size I built first — small enough to carry, big enough for a real GPU and an SFX PSU. The portable workstation I always wanted.',
-    specs: ['Mini-ITX (170 × 170 mm) board', 'SFX / SFX-L PSU', 'GPU up to 270 mm', 'CPU cooler up to 65 mm', 'Passive honeycomb airflow'],
+    blurb: 'The size I built first, and the one I keep coming back to. Small enough to live on a shelf, big enough for a real GPU and an SFX power supply. The portable workstation I always wanted but couldn\'t buy.',
+    specs: ['Mini-ITX board (170 × 170 mm)', 'SFX or SFX-L power supply', 'GPU up to 270 mm', 'CPU cooler up to 65 mm', 'Passive honeycomb airflow'],
     cta: 'Reserve the ITX',
     href: '#reserve',
   },
@@ -13,7 +13,7 @@ const formats = [
     name: 'Mini-ITX Lite',
     status: 'request',
     headline: 'On request',
-    blurb: 'Battery-friendly. APU or low-power CPU, no dedicated GPU. The "carry it to the kitchen" build.',
+    blurb: 'A quieter cousin. APU or low-power CPU, no discrete GPU, designed to run on a small power brick — or a battery, if you want to take your computer to the kitchen and write there for an afternoon.',
     specs: ['Mini-ITX board', 'External 19 V brick or battery', 'No discrete GPU', 'Whisper-quiet by design'],
     cta: 'Request a build',
     href: '#reserve',
@@ -22,8 +22,8 @@ const formats = [
     name: 'ATX',
     status: 'request',
     headline: 'Custom commission',
-    blurb: 'You bring the parts list, I bring the wood. Full ATX builds are made one at a time, sized to your hardware.',
-    specs: ['ATX / Micro-ATX board', 'ATX PSU', 'Triple-slot GPU possible', 'Bespoke layout per order'],
+    blurb: 'For the bigger builds — water loops, triple-slot cards, drives by the handful. You bring the parts list, I bring the wood. Each ATX case is sized to your hardware, not the other way around.',
+    specs: ['ATX or Micro-ATX board', 'Full ATX power supply', 'Triple-slot GPU possible', 'Bespoke layout per order'],
     cta: 'Request a build',
     href: '#reserve',
   },
@@ -32,13 +32,13 @@ const formats = [
 <section id="formats" class="py-28 md:py-40 wood-texture relative">
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="max-w-2xl mb-16">
-      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Formats</span>
+      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Three sizes</span>
       <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
         Built around<br/>
-        <span class="italic text-brand-gold">your hardware.</span>
+        <span class="italic text-brand-gold">your hardware,<br/>not the other way around.</span>
       </h2>
-      <p class="text-brand-cream/65 text-lg mt-6 leading-relaxed">
-        The first run is ITX. If your build needs more room — or much less — say the word and I'll cut it for you.
+      <p class="text-brand-cream/65 text-lg mt-6 leading-relaxed font-light">
+        The first run is ITX — the size I'd build for myself again tomorrow. If your build needs more room, or much less, write me and we'll figure it out together.
       </p>
     </div>
 
@@ -48,14 +48,14 @@ const formats = [
           'rounded-3xl p-7 md:p-8 border bg-brand-walnut-dark/60 backdrop-blur-sm transition-colors',
           f.status === 'available' ? 'border-brand-gold/60 ring-1 ring-brand-gold/30' : 'border-brand-cream/10 hover:border-brand-gold/40',
         ]}>
-          <div class="flex items-baseline justify-between mb-2">
+          <div class="flex items-baseline justify-between mb-3">
             <h3 class="font-display text-3xl">{f.name}</h3>
             <span class:list={[
               'text-[10px] tracking-[0.25em] uppercase px-2.5 py-1 rounded-full',
               f.status === 'available' ? 'bg-brand-gold text-brand-walnut-dark font-semibold' : 'border border-brand-cream/25 text-brand-cream/70',
             ]}>{f.headline}</span>
           </div>
-          <p class="text-brand-cream/65 text-sm leading-relaxed mb-6">{f.blurb}</p>
+          <p class="text-brand-cream/65 text-sm leading-relaxed mb-6 font-light">{f.blurb}</p>
           <ul class="space-y-2 mb-7 text-sm text-brand-cream/75">
             {f.specs.map((s) => (
               <li class="flex gap-2.5">

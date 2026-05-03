@@ -1,18 +1,21 @@
 ---
 const shots = [
-  { src: '/images/case-front.jpg',    label: 'Front',     note: 'Honeycomb grille, hand-cut on a CNC. 100 % passive airflow.' },
-  { src: '/images/case-back.jpg',     label: 'Back',      note: 'Standard ITX I/O cut-out. Fits your favourite board.' },
-  { src: '/images/case-backside.jpg', label: 'Profile',   note: 'Visible plywood lamination — every layer earned its place.' },
+  { src: '/images/case-front.jpg',    label: 'The face',  note: 'A grille of small hexagons, milled one pass at a time. The case breathes through it without a single fan begging for help.' },
+  { src: '/images/case-back.jpg',     label: 'The back',  note: 'A standard ITX I/O cut-out, a clean PSU window, and nothing else. The kind of back you don\'t mind seeing.' },
+  { src: '/images/case-backside.jpg', label: 'The grain', note: 'Look at the side and you can count the layers — every laminate of birch, stacked honest, no veneer hiding anything.' },
 ];
 ---
 <section id="gallery" class="py-28 md:py-40 bg-brand-walnut-dark">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <div class="max-w-2xl mb-14">
-      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">The Build</span>
+    <div class="max-w-2xl mb-16">
+      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Up close</span>
       <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
         Six sides.<br/>
-        <span class="italic text-brand-gold">No compromises.</span>
+        <span class="italic text-brand-gold">Nothing to hide.</span>
       </h2>
+      <p class="text-brand-cream/65 text-lg mt-6 leading-relaxed font-light">
+        A case earns its keep from every angle. Front, back, profile — there's no "good side" you're meant to point at the wall.
+      </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -26,9 +29,9 @@ const shots = [
               class="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
             />
           </div>
-          <figcaption class="mt-4">
+          <figcaption class="mt-5">
             <div class="text-brand-gold text-xs tracking-[0.3em] uppercase">{s.label}</div>
-            <p class="text-brand-cream/60 text-sm mt-2 leading-relaxed">{s.note}</p>
+            <p class="text-brand-cream/60 text-sm mt-2 leading-relaxed font-light">{s.note}</p>
           </figcaption>
         </figure>
       ))}

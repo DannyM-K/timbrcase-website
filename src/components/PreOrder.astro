@@ -1,49 +1,48 @@
 ---
 ---
 <section id="reserve" class="relative py-28 md:py-40 bg-gradient-to-b from-brand-walnut-dark via-brand-walnut to-brand-purple-dark overflow-hidden">
-  <!-- soft glow -->
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 0%, rgba(238,189,104,0.18), transparent 55%);"></div>
 
   <div class="max-w-3xl mx-auto px-6 md:px-12 text-center relative z-10">
-    <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Reserve</span>
-    <h2 class="font-display text-4xl md:text-6xl mt-4 mb-6 leading-[1.05]">
+    <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Reserve a case</span>
+    <h2 class="font-display text-4xl md:text-6xl mt-4 mb-7 leading-[1.05]">
       The first batch<br/>
       is <span class="italic text-gradient-gold">small on purpose.</span>
     </h2>
-    <p class="text-brand-cream/75 text-lg mb-12 leading-relaxed max-w-xl mx-auto">
-      Limited run, hand-built one at a time. Drop your email and pick a format — I'll write back personally before any payment is asked for.
+    <p class="text-brand-cream/75 text-lg mb-12 leading-relaxed max-w-xl mx-auto font-light">
+      I'd rather build a few cases properly than a hundred quickly. Drop your name and what you're building — I'll write back personally, talk through the details, and only then ask you for any money.
     </p>
 
     <form
       class="flex flex-col gap-3 max-w-md mx-auto text-left"
-      onsubmit="event.preventDefault(); const f = event.target; alert(`Thanks! I'll be in touch about the ${f.format.value} — to ${f.email.value}.`); f.reset();"
+      onsubmit="event.preventDefault(); const f = event.target; alert(`Thanks — I'll write back about the ${f.format.value} to ${f.email.value}. — Daniel`); f.reset();"
     >
-      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60">Format</label>
+      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60">Which case?</label>
       <select
         name="format"
         required
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors"
       >
-        <option value="ITX (in stock)">ITX — available now</option>
+        <option value="ITX (available now)">ITX — available now</option>
         <option value="Mini-ITX Lite">Mini-ITX Lite — on request</option>
         <option value="ATX custom">ATX — custom commission</option>
         <option value="Other / let's talk">Other / let's talk</option>
       </select>
 
-      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Email</label>
+      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Your email</label>
       <input
         type="email"
         name="email"
         required
-        placeholder="your@email.com"
+        placeholder="you@somewhere.com"
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream placeholder:text-brand-cream/40 focus:outline-none focus:border-brand-gold transition-colors"
       />
 
-      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">A few words about your build (optional)</label>
+      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Tell me about the build (optional)</label>
       <textarea
         name="notes"
         rows="3"
-        placeholder="What's going inside? What does it need to do?"
+        placeholder="What's going inside it? Where will it live? Anything I should know."
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream placeholder:text-brand-cream/40 focus:outline-none focus:border-brand-gold transition-colors resize-none"
       ></textarea>
 
@@ -53,7 +52,7 @@
       >
         Send it →
       </button>
-      <p class="text-brand-cream/45 text-xs text-center mt-3">No newsletter. No spam. One reply, from me.</p>
+      <p class="text-brand-cream/45 text-xs text-center mt-3">No newsletter. No follow-up funnel. One reply, from me.</p>
     </form>
   </div>
 </section>
