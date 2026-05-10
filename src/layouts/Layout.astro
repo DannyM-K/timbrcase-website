@@ -19,5 +19,46 @@ const { title = 'Timbrcase — Hand-crafted wooden cases' } = Astro.props;
   </head>
   <body>
     <slot />
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm cursor-zoom-out p-4 md:p-10">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
+      <button id="lightbox-close" aria-label="Close" class="absolute top-4 right-4 md:top-6 md:right-6 text-white/80 hover:text-white text-3xl leading-none w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60 transition-colors">×</button>
+    </div>
+
+    <script is:inline>
+      (function () {
+        const overlay = document.getElementById('lightbox');
+        const overlayImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('lightbox-close');
+        if (!overlay || !overlayImg) return;
+
+        function open(src, alt) {
+          overlayImg.src = src;
+          overlayImg.alt = alt || '';
+          overlay.classList.remove('hidden');
+          overlay.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+        function close() {
+          overlay.classList.add('hidden');
+          overlay.classList.remove('flex');
+          overlayImg.src = '';
+          document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('img[data-lightbox]').forEach((img) => {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => open(img.currentSrc || img.src, img.alt));
+        });
+
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay || e.target === closeBtn) close();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !overlay.classList.contains('hidden')) close();
+        });
+      })();
+    </script>
   </body>
 </html>

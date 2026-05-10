@@ -11,7 +11,7 @@ const shots = [
 <section id="the-case" class="py-28 md:py-40 bg-brand-walnut-dark">
   <div class="max-w-7xl mx-auto px-6 md:px-12">
     <div class="max-w-2xl mb-16">
-      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">In the wood</span>
+      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">More pictures</span>
       <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
         The case,<br/>
         <span class="italic text-brand-gold">up close.</span>
@@ -21,14 +21,15 @@ const shots = [
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
       {shots.map((src) => (
-        <div class="rounded-2xl overflow-hidden border border-brand-gold/10 bg-brand-walnut-dark">
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-brand-gold/10 bg-brand-walnut-dark">
           <img
             src={src}
             alt="Timbrcase prototype"
             loading="lazy"
-            class="w-full h-full object-cover aspect-[4/3] block"
+            data-lightbox
+            class="w-full h-full object-cover block"
           />
         </div>
       ))}

@@ -14,8 +14,41 @@
     </p>
 
     <form
+      id="reserve-form"
       class="flex flex-col gap-3 max-w-md mx-auto text-left"
-      onsubmit="event.preventDefault(); const f = event.target; const finish = f.finish ? f.finish.value : 'n/a'; alert(`Thanks — I'll write back about the ${f.format.value} (finish: ${finish}) to ${f.email.value}. — Daniel`); f.reset(); document.getElementById('finish-row').style.display='none';"
+      onsubmit="(async (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const btn = f.querySelector('button[type=submit]');
+        const status = document.getElementById('reserve-status');
+        btn.disabled = true; const oldText = btn.textContent; btn.textContent = 'Sending…';
+        status.textContent = '';
+        const payload = {
+          name: f.name.value,
+          email: f.email.value,
+          format: f.format.value,
+          finish: f.finish ? f.finish.value : 'n/a',
+          notes: f.notes.value,
+          website: f.website.value
+        };
+        try {
+          const res = await fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+          const j = await res.json();
+          if (j.ok) {
+            status.style.color = '#EEBD68';
+            status.textContent = 'Thank you — your reservation request has been sent. We will write back soon.';
+            f.reset();
+            document.getElementById('finish-row').style.display = 'flex';
+          } else {
+            status.style.color = '#ff8a8a';
+            status.textContent = 'Something went wrong. Please try again or email case@timbrcase.com directly.';
+          }
+        } catch (err) {
+          status.style.color = '#ff8a8a';
+          status.textContent = 'Network error. Please email case@timbrcase.com directly.';
+        }
+        btn.disabled = false; btn.textContent = oldText;
+      })(event);"
     >
       <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60">Which case?</label>
       <select
@@ -46,6 +79,15 @@
         </select>
       </div>
 
+      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Your name</label>
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="First and last name"
+        class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream placeholder:text-brand-cream/40 focus:outline-none focus:border-brand-gold transition-colors"
+      />
+
       <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Your email</label>
       <input
         type="email"
@@ -63,6 +105,8 @@
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream placeholder:text-brand-cream/40 focus:outline-none focus:border-brand-gold transition-colors resize-none"
       ></textarea>
 
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;" aria-hidden="true" />
+
       <button
         type="submit"
         class="mt-4 px-7 py-4 rounded-full bg-brand-gold text-brand-walnut-dark font-semibold hover:bg-brand-gold-bright transition-colors"
@@ -70,6 +114,7 @@
         Get in touch →
       </button>
       <p class="text-brand-cream/45 text-xs text-center mt-3">No newsletter. No follow-up funnel. One reply, from me.</p>
+      <p id="reserve-status" class="text-sm text-center mt-3 min-h-[1.25rem]"></p>
     </form>
   </div>
 </section>
