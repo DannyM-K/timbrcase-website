@@ -4,7 +4,7 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 0%, rgba(238,189,104,0.18), transparent 55%);"></div>
 
   <div class="max-w-3xl mx-auto px-6 md:px-12 text-center relative z-10">
-    <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Reserve your Timbrcase</span>
+    <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Choose your Timbrcase</span>
     <h2 class="font-display text-4xl md:text-6xl mt-4 mb-7 leading-[1.05]">
       The first batch<br/>
       is <span class="italic text-gradient-gold">small on purpose.</span>
@@ -36,7 +36,7 @@
           const j = await res.json();
           if (j.ok) {
             status.style.color = '#EEBD68';
-            status.textContent = 'Thank you — your reservation request has been sent. We will write back soon.';
+            status.textContent = 'Thank you — your request has been sent. We will write back soon.';
             f.reset();
             document.getElementById('finish-row').style.display = 'flex';
           } else {
