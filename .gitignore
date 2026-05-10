@@ -26,3 +26,6 @@ Thumbs.db
 
 # astro
 .astro/
+
+# original (pre-optimization) images, kept locally only
+public/images/_original/
