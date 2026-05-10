@@ -2,24 +2,34 @@
 const steps = [
   {
     n: '01',
-    t: 'Pick the wood',
-    d: 'Cheaper plywood, multiplex birch, or solid hardwood like cherry — almost anything is possible. You tell me how you want your case to look, and we choose the material together.',
+    t: 'Choosing the wood',
+    d: 'We work closely with a traditional family-run timber supplier who provides us with the highest-quality multiplex birch plywood — and other European woods on request. All sourced from Europe. Every Timbrcase is built from high-quality multiplex birch.',
   },
   {
     n: '02',
-    t: 'Cut and bond',
-    d: 'Each panel is cut with a precision laser and glued together with a natural, solvent-free wood adhesive. We are constantly refining the process to push the quality higher with every build.',
+    t: 'Cut',
+    d: 'Each panel is laser-cut to a precise pattern and inspected by hand. Any natural marks in the wood are kept where they add to the character of the case, never take away from it.',
   },
   {
     n: '03',
-    t: 'Choose the finish',
-    d: 'Natural, oiled, or stained — your call. Natural keeps the rawness of the wood, oil deepens the grain and protects it for decades, stain shifts the tone darker. None of them hide what the wood actually is.',
+    t: 'Bond',
+    d: 'The pieces are carefully glued together with a natural timber glue, sanded smooth, and finished to your wish — natural, oiled, or stained. More elaborate finishes are available on request and may add to the cost.',
+  },
+  {
+    n: '04',
+    t: 'Mounting',
+    d: 'The mainboard standoffs, the power LED, and the wooden power button — wired and ready to plug straight into your mainboard — are mounted by hand.',
+  },
+  {
+    n: '05',
+    t: 'Final inspection',
+    d: 'Every case goes through a final inspection and test to make sure everything runs smoothly and the ITX board sits exactly where it should.',
   },
 ];
 ---
 <section id="craft" class="relative py-28 md:py-40 overflow-hidden bg-brand-walnut-dark">
   <img
-    src="/images/detail.jpg"
+    src="/images/20260507_125614.jpg"
     alt=""
     aria-hidden="true"
     class="absolute inset-0 w-full h-full object-cover opacity-25 scale-110 blur-[2px]"
@@ -32,20 +42,20 @@ const steps = [
       <div class="lg:col-span-5">
         <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">How it's made</span>
         <h2 class="font-display text-4xl md:text-5xl mt-4 mb-8 leading-tight">
-          Three steps.<br/>
-          <span class="italic text-brand-gold">One pair of hands.</span>
+          Five steps.<br/>
+          <span class="italic text-brand-gold">Built by a small circle.</span>
         </h2>
         <p class="text-brand-cream/75 text-lg leading-relaxed font-light mb-5">
-          No assembly line. No outsourced finishing. Every Timbrcase passes through the same workshop, the same eyes, twice — once before the finish, once before it's allowed to leave.
+          The wood comes from a family-run timber supplier in Europe, and from there everything happens in one small workshop in Germany, close to the river Rhine — cut, bonded, sanded, finished, mounted, and tested by hand before it leaves.
         </p>
         <p class="text-brand-cream/65 text-base leading-relaxed font-light mb-5">
-          <span class="text-brand-gold">100 % made in Europe</span>, from European wood. The trees, the workshop, the hands — all on the same continent, all traceable.
+          Built in Germany, from wood sourced across Europe — together, that makes every case <span class="text-brand-gold">100 % made in Europe</span>.
         </p>
         <p class="text-brand-cream/65 text-base leading-relaxed font-light italic">
           Every case is a small piece of design art. Because each panel of wood has its own grain, its own flaws, its own light — no two Timbrcases will ever be exactly the same. Yours will only ever be yours.
         </p>
-        <div class="mt-10 aspect-[16/9] rounded-2xl overflow-hidden border border-brand-gold/10">
-          <img src="/images/detail.jpg" alt="Multiplex birch lamination, close-up" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="mt-10 rounded-2xl overflow-hidden border border-brand-gold/10 bg-brand-walnut-dark">
+          <img src="/images/20260507_125614.jpg" alt="Multiplex birch lamination, close-up" class="w-full h-auto block" loading="lazy"/>
         </div>
       </div>
 

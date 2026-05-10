@@ -4,30 +4,47 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 0%, rgba(238,189,104,0.18), transparent 55%);"></div>
 
   <div class="max-w-3xl mx-auto px-6 md:px-12 text-center relative z-10">
-    <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Reserve a case</span>
+    <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Reserve your Timbrcase</span>
     <h2 class="font-display text-4xl md:text-6xl mt-4 mb-7 leading-[1.05]">
       The first batch<br/>
       is <span class="italic text-gradient-gold">small on purpose.</span>
     </h2>
     <p class="text-brand-cream/75 text-lg mb-12 leading-relaxed max-w-xl mx-auto font-light">
-      I'd rather build a few cases properly than a hundred quickly. Drop your name and what you're building — I'll write back personally, talk through the details, and only then ask you for any money.
+      We work batch by batch — keeping the standard high and the price fair. Choose your case, drop your email, and we'll get in touch.
     </p>
 
     <form
       class="flex flex-col gap-3 max-w-md mx-auto text-left"
-      onsubmit="event.preventDefault(); const f = event.target; alert(`Thanks — I'll write back about the ${f.format.value} to ${f.email.value}. — Daniel`); f.reset();"
+      onsubmit="event.preventDefault(); const f = event.target; const finish = f.finish ? f.finish.value : 'n/a'; alert(`Thanks — I'll write back about the ${f.format.value} (finish: ${finish}) to ${f.email.value}. — Daniel`); f.reset(); document.getElementById('finish-row').style.display='none';"
     >
       <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60">Which case?</label>
       <select
         name="format"
         required
+        onchange="document.getElementById('finish-row').style.display = this.value.startsWith('Mini-ITX') ? 'flex' : 'none';"
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors"
       >
-        <option value="ITX (available now)">ITX — available now</option>
-        <option value="Mini-ITX Lite">Mini-ITX Lite — on request</option>
-        <option value="ATX custom">ATX — custom commission</option>
+        <option value="Mini-ITX — Minimalist">Mini-ITX — Minimalist (available now)</option>
+        <option value="Mini-ITX — with SSD holder">Mini-ITX — with SSD holder (available now)</option>
+        <option value="Mini-ITX — SSD + GPU">Mini-ITX — SSD + GPU (available now)</option>
+        <option value="Nano-ITX">Nano-ITX — on request</option>
+        <option value="ATX custom">ATX — custom commission (2–3 months)</option>
         <option value="Other / let's talk">Other / let's talk</option>
       </select>
+
+      <div id="finish-row" class="flex flex-col gap-3 mt-3">
+        <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60">Finish</label>
+        <select
+          name="finish"
+          class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors"
+        >
+          <option value="Hardwax oil (Osmo)">Hardwax oil (Osmo) — natural, soft sheen</option>
+          <option value="Matte water-based clear coat">Matte water-based clear coat — keeps the birch pale</option>
+          <option value="Furniture wax">Furniture wax — warm, hand-rubbed</option>
+          <option value="On request">On request — darker tone or piano gloss</option>
+          <option value="Not sure yet">Not sure yet — let's talk</option>
+        </select>
+      </div>
 
       <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Your email</label>
       <input
@@ -38,11 +55,11 @@
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream placeholder:text-brand-cream/40 focus:outline-none focus:border-brand-gold transition-colors"
       />
 
-      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Tell me about the build (optional)</label>
+      <label class="text-xs tracking-[0.25em] uppercase text-brand-cream/60 mt-3">Any questions?</label>
       <textarea
         name="notes"
         rows="3"
-        placeholder="What's going inside it? Where will it live? Anything I should know."
+        placeholder="Anything you'd like to ask or tell us — about the case, the build, or your setup."
         class="px-5 py-3.5 rounded-2xl bg-brand-cream/5 border border-brand-cream/15 text-brand-cream placeholder:text-brand-cream/40 focus:outline-none focus:border-brand-gold transition-colors resize-none"
       ></textarea>
 
@@ -50,7 +67,7 @@
         type="submit"
         class="mt-4 px-7 py-4 rounded-full bg-brand-gold text-brand-walnut-dark font-semibold hover:bg-brand-gold-bright transition-colors"
       >
-        Send it →
+        Get in touch →
       </button>
       <p class="text-brand-cream/45 text-xs text-center mt-3">No newsletter. No follow-up funnel. One reply, from me.</p>
     </form>

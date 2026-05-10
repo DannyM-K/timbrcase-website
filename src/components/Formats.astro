@@ -1,20 +1,21 @@
 ---
 const formats = [
   {
-    name: 'ITX',
+    name: 'Mini-ITX',
     status: 'available',
     headline: 'Available now',
-    blurb: 'The size I built first, and the one I keep coming back to. Small enough to live on a shelf, big enough for a real GPU and an SFX power supply. The portable workstation I always wanted but couldn\'t buy.',
-    specs: ['Mini-ITX board (170 × 170 mm)', 'SFX or SFX-L power supply', 'GPU up to 270 mm', 'CPU cooler up to 65 mm', 'Passive honeycomb airflow'],
-    cta: 'Reserve the ITX',
+    blurb: 'The size we build first, and the one we keep coming back to. Small enough to live on a shelf, big enough for a real GPU. Three layouts to choose from: Minimalist, with SSD holder, or SSD + GPU.',
+    specs: ['Mini-ITX board (170 × 170 mm)', 'PicoPSU powered', 'Hidden power LED & wooden button', 'Laser-cut hexagon airflow', 'High-quality multiplex birch'],
+    cta: 'Choose your Timbrcase',
     href: '#reserve',
+    image: '/images/mini-itx-card.jpg',
   },
   {
-    name: 'Mini-ITX Lite',
+    name: 'Nano-ITX',
     status: 'request',
     headline: 'On request',
-    blurb: 'A quieter cousin. APU or low-power CPU, no discrete GPU, designed to run on a small power brick — or a battery, if you want to take your computer to the kitchen and write there for an afternoon.',
-    specs: ['Mini-ITX board', 'External 19 V brick or battery', 'No discrete GPU', 'Whisper-quiet by design'],
+    blurb: 'The smallest of the family. Built around a Nano-ITX board with an APU or low-power CPU — no discrete GPU. Compact, silent, and perfectly suited for a tidy desk or a quiet living room.',
+    specs: ['Nano-ITX board (120 × 120 mm)', 'APU or low-power CPU', 'PicoPSU powered', 'Silent, fanless-friendly layout'],
     cta: 'Request a build',
     href: '#reserve',
   },
@@ -22,8 +23,8 @@ const formats = [
     name: 'ATX',
     status: 'request',
     headline: 'Custom commission',
-    blurb: 'For the bigger builds — water loops, triple-slot cards, drives by the handful. You bring the parts list, I bring the wood. Each ATX case is sized to your hardware, not the other way around.',
-    specs: ['ATX or Micro-ATX board', 'Full ATX power supply', 'Triple-slot GPU possible', 'Bespoke layout per order'],
+    blurb: 'For the bigger builds — water cooling, room for any graphics card no matter the size, mounts for radiators, a separate chamber for the PSU and clean cable management, even a glass front if you want one. Built to the same standard as any high-end metal case — only in wood. ATX builds take more time: plan with 2–3 months so we can hold the quality your case deserves.',
+    specs: ['ATX or Micro-ATX board', 'Full ATX power supply, separate PSU chamber', 'Any GPU, any size', 'Water-cooling & radiator mounts', 'Optional glass front', 'Build time: 2–3 months'],
     cta: 'Request a build',
     href: '#reserve',
   },
@@ -32,13 +33,13 @@ const formats = [
 <section id="formats" class="py-28 md:py-40 wood-texture relative">
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
     <div class="max-w-2xl mb-16">
-      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Three sizes</span>
+      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Three sizes · 5 Formats</span>
       <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
         Built around<br/>
-        <span class="italic text-brand-gold">your hardware,<br/>not the other way around.</span>
+        <span class="italic"><span class="text-brand-cream">your hardware,</span><br/><span class="text-brand-gold">not the other way around.</span></span>
       </h2>
       <p class="text-brand-cream/65 text-lg mt-6 leading-relaxed font-light">
-        The first run is ITX — the size I'd build for myself again tomorrow. If your build needs more room, or much less, write me and we'll figure it out together.
+        The first run is ITX — the prototype shown in the photos has since been refined, and you'll receive a perfected version of the case you see. If your build needs more room, or much less, write me and we'll figure it out together.
       </p>
     </div>
 
@@ -69,12 +70,22 @@ const formats = [
             class:list={[
               'inline-flex items-center gap-2 text-sm font-semibold rounded-full px-5 py-2.5 transition-colors',
               f.status === 'available'
-                ? 'bg-brand-gold text-brand-walnut-dark hover:bg-brand-gold-bright'
+                ? 'bg-brand-purple text-brand-cream hover:opacity-90'
                 : 'border border-brand-cream/25 text-brand-cream hover:border-brand-gold/60 hover:text-brand-gold',
             ]}
           >
             {f.cta} →
           </a>
+          {f.image && (
+            <div class="mt-7 rounded-2xl overflow-hidden border border-brand-gold/15 bg-brand-walnut-dark">
+              <img
+                src={f.image}
+                alt={`${f.name} Timbrcase`}
+                class="w-full h-auto block"
+                loading="lazy"
+              />
+            </div>
+          )}
         </div>
       ))}
     </div>

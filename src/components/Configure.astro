@@ -1,0 +1,51 @@
+---
+const choices = [
+  {
+    n: '01',
+    t: 'The size',
+    d: 'Pick the form factor that fits your build — Mini-ITX (three layouts: Minimalist, with SSD holder, or SSD + GPU), Nano-ITX, or full ATX.',
+  },
+  {
+    n: '02',
+    t: 'The finish',
+    d: 'Three finishes that protect the wood while keeping its natural look — hardwax oil, a matte water-based clear coat, or hand-rubbed furniture wax. On request, a deeper, darker tone or a piano-like high-gloss finish can also be done.',
+  },
+  {
+    n: '03',
+    t: 'Where to ship',
+    d: 'Choose where to ship your case — and soon you can move your hardware into your Timbrcase!',
+  },
+];
+---
+<section id="configure" class="relative py-28 md:py-40 overflow-hidden bg-brand-walnut-dark">
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-walnut-dark via-black/30 to-brand-walnut-dark"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(circle at 20% 30%, rgba(238,189,104,0.10), transparent 55%);"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="grid lg:grid-cols-12 gap-14 items-start">
+      <div class="lg:col-span-5">
+        <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">Make it yours</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-4 mb-8 leading-tight">
+          Three choices.<br/>
+          <span class="italic text-brand-gold">One case, just for you.</span>
+        </h2>
+        <p class="text-brand-cream/75 text-lg leading-relaxed font-light mb-5">
+          Every Timbrcase is built to order. A few small choices shape the size, the look, and where it will live — the rest is in our hands.
+        </p>
+        <p class="text-brand-cream/65 text-base leading-relaxed font-light italic">
+          Not sure yet? Tell us about your build and we'll guide you through it.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+        {choices.map((c) => (
+          <div class="border-t border-brand-gold/25 pt-6 pr-2">
+            <div class="text-brand-gold/70 font-display text-sm mb-3">{c.n}</div>
+            <h3 class="font-display text-2xl mb-3">{c.t}</h3>
+            <p class="text-brand-cream/65 text-sm leading-relaxed font-light">{c.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
