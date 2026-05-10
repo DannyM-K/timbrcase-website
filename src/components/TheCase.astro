@@ -1,0 +1,41 @@
+---
+const shots = [
+  '/images/20260508_114557.jpg',
+  '/images/20260508_114435.jpg',
+  '/images/20260508_114503.jpg',
+  '/images/20260507_132008.jpg',
+  '/images/20260507_131940.jpg',
+  '/images/20260507_131900.jpg',
+];
+---
+<section id="the-case" class="py-28 md:py-40 bg-brand-walnut-dark">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="max-w-2xl mb-16">
+      <span class="text-brand-gold text-xs tracking-[0.32em] uppercase">In the wood</span>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight">
+        The case,<br/>
+        <span class="italic text-brand-gold">up close.</span>
+      </h2>
+      <p class="text-brand-cream/65 text-lg mt-6 leading-relaxed font-light">
+        A few quiet moments with the prototype — the grain, the grille, the light moving across the wood.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {shots.map((src) => (
+        <div class="rounded-2xl overflow-hidden border border-brand-gold/10 bg-brand-walnut-dark">
+          <img
+            src={src}
+            alt="Timbrcase prototype"
+            loading="lazy"
+            class="w-full h-full object-cover aspect-[4/3] block"
+          />
+        </div>
+      ))}
+    </div>
+
+    <p class="text-brand-cream/45 text-xs mt-8 italic font-light max-w-2xl">
+      Note: some photos show internal hardware (mainboard, components) for context only — these are not part of the case and are not included.
+    </p>
+  </div>
+</section>
